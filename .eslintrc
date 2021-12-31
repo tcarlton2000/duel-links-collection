@@ -8,5 +8,15 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
-    ]
+    ],
+    "rules": {
+        "prettier/prettier": [
+            1,
+            {
+                "trailingComma": "es5",
+                "singleQuote": true,
+                "semi": true
+            }
+        ]
+    }
 }
