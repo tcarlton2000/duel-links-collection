@@ -1,7 +1,12 @@
 import request, { Response } from 'supertest';
-import app from './app';
+import { connectDB } from './database';
+import app from './server';
 
 describe('Test the root path', () => {
+  beforeAll(async () => {
+    await connectDB();
+  });
+
   test('It should return "Duel Links Collection"', async () => {
     const response: Response = await request(app).get('/');
     expect(response.statusCode).toBe(200);
